@@ -1,7 +1,7 @@
 node("docker") {
-    docker.withRegistry('testapi', 'belalansari') {
+    docker.withRegistry('belalansari', 'zamila1234') {
     
-        git url: "https://github.com/belalansari23/microservice-demo.git", credentialsId: 'belalansari23@gmail.com'
+        git url: "https://github.com/belalansari23/microservice-demo.git", credentialsId: 'zamila1234'
     
         sh "git rev-parse HEAD > .git/commit-id"
         def commit_id = readFile('.git/commit-id').trim()
