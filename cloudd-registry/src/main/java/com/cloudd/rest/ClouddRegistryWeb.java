@@ -11,6 +11,6 @@ public class ClouddRegistryWeb {
 	@GetMapping("/get")
 	public String getRegister()
 	{
-		return "Hello, calling get API.";
+		return "Hello belal.";
 	}
 }
