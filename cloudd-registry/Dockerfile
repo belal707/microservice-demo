@@ -3,11 +3,11 @@ VOLUME /code
 RUN apt-get update  
 RUN apt-get install -y maven
 
-ADD pom.xml /code/pom.xml  
+ADD pom.xml pom.xml  
 RUN ["mvn", "dependency:resolve"]  
 RUN ["mvn", "verify"]
 
-ADD src /code/src  
+ADD src src  
 RUN ["mvn", "package"]
 
 #CMD["mvn", "clean install"]
