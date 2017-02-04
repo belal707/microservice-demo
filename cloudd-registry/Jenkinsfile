@@ -1,0 +1,17 @@
+node("docker") {
+    docker.withRegistry('testapi', 'belalansari') {
+    
+        git url: "https://github.com/belalansari23/microservice-demo.git", credentialsId: 'belalansari23@gmail.com'
+    
+        sh "git rev-parse HEAD > .git/commit-id"
+        def commit_id = readFile('.git/commit-id').trim()
+        println commit_id
+    
+        stage "build"
+        def app = docker.build "your-project-name"
+    
+        stage "publish"
+        app.push 'master'
+        app.push "${commit_id}"
+    }
+}
