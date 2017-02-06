@@ -12,23 +12,25 @@ node
 	{
   		stage('Create Docker Image') 
   		{
-    			docker.build("belalansari/testapi:${env.BUILD_NUMBER}")
+    			docker.build("belalansari/testapi1")
   		}
 	}
- /* stage('Run Tests') 
-  {
-    try 
-	{  
-		sh "mvn test"
-        docker.build("belalansari/testapi:${env.BUILD_NUMBER}").push()
-    } catch (error)
+	/*dir('cloudd-registry')
 	{
+		stage('Run Tests') 
+  		{
+   		try 
+		{  
+			sh "mvn test"
+        		docker.build("belalansari/testapi1").push()
+    		} catch (error)
+		{
 
-    } finally 
-	{
+    		} finally 
+		{
      // junit '**/target/surefire-reports/*.xml'
-    }
-  }*/
+    		}
+	}*/
 }
 /*node("docker") {
     docker.withRegistry('belalansari', 'zamila1234') {
