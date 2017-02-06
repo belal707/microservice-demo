@@ -15,7 +15,7 @@ node
     			docker.build("belalansari/testapi1")
   		}
 	}
-	/*dir('cloudd-registry')
+	dir('cloudd-registry')
 	{
 		stage('Run Tests') 
   		{
@@ -26,26 +26,6 @@ node
     		} catch (error)
 		{
 
-    		} finally 
-		{
-     // junit '**/target/surefire-reports/*.xml'
-    		}
-	}*/
+    		} 
+	}
 }
-/*node("docker") {
-    docker.withRegistry('belalansari', 'zamila1234') {
-    
-        git url: "https://github.com/belalansari23/microservice-demo.git", credentialsId: 'zamila1234'
-    
-        sh "git rev-parse HEAD > .git/commit-id"
-        def commit_id = readFile('.git/commit-id').trim()
-        println commit_id
-    
-        stage "build"
-        def app = docker.build "cloudd-registry"
-    
-        stage "publish"
-        app.push 'master'
-        app.push "${commit_id}"
-    }
-}*/
