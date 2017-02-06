@@ -1,10 +1,14 @@
 node 
 {
   checkout scm
-  stage('Package') 
-  {
-     sh 'mvn clean package -DskipTests'
-  }
+	dir('cloudd-registry')
+	{
+	  stage('Package') 
+	  {
+	     sh 'mvn clean package -DskipTests'
+	  }
+	}
+	
   stage('Create Docker Image') 
   {
     docker.build("belalansari/testapi:${env.BUILD_NUMBER}")
