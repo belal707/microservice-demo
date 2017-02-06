@@ -19,13 +19,14 @@ node
 	{
 		stage('Run Tests') 
   		{
-   		try 
-		{  
-			sh "mvn test"
-        		docker.build("belalansari/testapi1").push()
-    		} catch (error)
-		{
+			try 
+			{  
+				sh "mvn test"
+				docker.build("belalansari/testapi1").push()
+			} catch (error)
+			{
 
-    		} 
+			} 
+		}	
 	}
 }
