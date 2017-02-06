@@ -25,13 +25,13 @@ node {
       // Run tests using Maven
       //dir ('webapp') {
       //  sh 'mvn exec:java -DskipTests'
-      //}*/
+      //}
     } catch (error) {
     } finally {
       // Stop and remove database container here
       //sh 'docker-compose stop db'
       //sh 'docker-compose rm db'
-    }
+    }*/
   }
 
   stage('Run Tests') {
