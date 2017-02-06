@@ -8,11 +8,13 @@ node
 	     sh 'mvn clean package -DskipTests'
 	  }
 	}
-	
-  stage('Create Docker Image') 
-  {
-    docker.build("belalansari/testapi:${env.BUILD_NUMBER}")
-  }
+  	dir('cloudd-registry')
+	{
+  		stage('Create Docker Image') 
+  		{
+    			docker.build("belalansari/testapi:${env.BUILD_NUMBER}")
+  		}
+	}
  /* stage('Run Tests') 
   {
     try 
