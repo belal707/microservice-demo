@@ -22,7 +22,6 @@ node
 			try 
 			{  
 				sh "mvn test"
-				docker login --password="zamila1234" --username="belalansari"
 				docker.build("belalansari/cloud:1").push()
 			} catch (error)
 			{
