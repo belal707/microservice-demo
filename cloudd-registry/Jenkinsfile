@@ -22,7 +22,10 @@ node
 			try 
 			{  
 				sh "mvn test"
-				docker.build("belalansari/cloud:2").push()
+				docker.withRegistry('https://hub.docker.com/', 'belalansari')
+				{
+					docker.build("belalansari/cloud:2").push()
+				}
 			} catch (error)
 			{
 
