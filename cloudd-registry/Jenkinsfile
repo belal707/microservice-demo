@@ -12,7 +12,7 @@ node
 	{
   		stage('Create Docker Image') 
   		{
-    			docker.build("belalansari/cloud:2")
+    			docker.build("belalansari/cloud:3")
   		}
 	}
 	dir('cloudd-registry')
@@ -23,7 +23,7 @@ node
 			{  
 				sh "mvn test"
 				
-			        docker.build("belalansari/cloud:2").push()
+			        docker.build("belalansari/cloud:3").push()
 				
 			} catch (error)
 			{
